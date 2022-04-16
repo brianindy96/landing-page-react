@@ -42,10 +42,14 @@
     background-color: darkgrey;
     border: 1px transparent solid;
     transition: 0.05s ease;
+    cursor: pointer;
 }
 
 .banner-des button:hover{
     transform: scale(1.1);
+    background: transparent;
+    border: 1px solid black;
+    letter-spacing: .1rem;
 }
 
 @media screen and (max-width: 480px) {
