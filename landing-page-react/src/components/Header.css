@@ -37,3 +37,54 @@
     padding-right: 2rem;
 }
 
+.mobile-menu{
+    /* We don't want it to show when it's not mobile */
+    display: none;
+    color: white;
+}
+
+@media screen and (max-width: 480px){
+    .mobile-menu{
+        display: block;
+        margin-right: 10px;
+        font-size: 2rem;
+    }
+
+    .header{
+        padding: 1rem 2rem;
+    }
+
+    .menu{
+        width: 100%;
+        height: auto;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 64px;
+        background-color: black;
+        left: -100%;
+        opacity: 0;
+        transition: 0.05s ease;
+    }
+
+    .menu.active{
+        width: 100%;
+        left: 0;
+        background-color: grey;
+        opacity: 1;
+        z-index: 1;
+        padding-left: 0;
+    }
+
+    .menu li{
+        padding-right: 0;
+    }
+
+    .menu-link{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        height: 10vw;
+    }
+}
