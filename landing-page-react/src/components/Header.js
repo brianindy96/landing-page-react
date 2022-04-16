@@ -26,7 +26,7 @@ const Header = () => {
                 <div className="logo-container">
                         <a href="#">.my-world <FiDribbble /></a>
                 </div>
-                <ul className="menu active">
+                <ul className={click ? "menu active" : "menu"}>
                     <li className="menu-link">
                         <a href="#">PORTFOLIO</a>
                     </li>
