@@ -1,0 +1,36 @@
+.container{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.content-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content-container:first-child, .content-container:last-child{
+    padding: 5rem 0 ;
+}
+
+.content-left{
+    flex: 1;
+}
+
+.content-left img{
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.content-right{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+.content-right h2{
+    font-size: 3rem;
+}
