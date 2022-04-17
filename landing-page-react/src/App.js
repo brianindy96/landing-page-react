@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Content from './components/Content';
+import CTA from "./components/CalltoAction";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Banner />
       <Content />
+      <CTA />
     </div>
   );
 }
