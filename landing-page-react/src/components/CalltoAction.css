@@ -1,0 +1,58 @@
+.container{
+    max-width: 960px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.cta-bg{
+    background: url("https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+    /* Position is relative to overlay */
+    position: relative;
+}   
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cta-text{
+    position: relative;
+    z-index: 100;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-text p{
+    line-height: 1.7rem;
+}
+
+.cta-text a{
+    text-decoration: none;
+    color: white;
+    transition: 0.05s ease;
+    font-size: 1.5rem;
+    color: lightgrey;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 7px;
+
+}
+
+.cta-text a:hover{
+    transform: scale(1.1);
+    letter-spacing: 1.5px;
+    color: white;
+    background-color: black;
+}
