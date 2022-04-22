@@ -23,8 +23,8 @@
 
 .card img{
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     border-radius: 10px;
     transition: transform 0.5s;
     transform: scale(0);
@@ -38,4 +38,20 @@
     100%{
         transform: scale(1);
     }
+}
+
+.card.active{
+    transform: translateY(0);
+}
+
+.card.wrong{
+    background-color: rgb(177, 19, 19);
+}
+
+.card.correct{
+    background-color: rgb(95, 252, 95);
+}
+
+.card.active img{
+    transform: scale(1);
 }

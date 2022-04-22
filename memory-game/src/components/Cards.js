@@ -23,13 +23,40 @@ const Cards = ({ cards }) => {
     {id: 8,image: "https://images.unsplash.com/photo-1591575930710-f88ddf08a52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", stat: ""},
     ].sort(()=> Math.random()-0.5));
 
+
+    const [prev, setPrev] = useState(-1);
+
+    const check = (current) =>{
+        if(items[current].id == items[prev].id){
+            items[current].stat = "correct"
+            items[prev].stat = "correct"
+            setPrev(-1)
+        } else{
+            items[current].stat = "wrong"
+            items[prev].stat = "wrong"
+            setItems([...items])
+            // If wrong, then reverse the card back to initial state
+            setTimeout(()=>{
+                items[current].stat = ""
+                items[prev].stat = ""
+                setItems([...items])
+                setPrev(-1);
+            }, 500)
+        }
+    }
     const handleClick = (id) =>{
-        alert(id);
+        if(prev === -1){
+            items[id].stat = "active"
+            setItems([...items])
+            setPrev(id)
+        } else{
+            check(id);
+        }
     }
   return (
     <div className="card-container">
         {items.map((item, index) =>(
-            <Card onClick={handleClick} id={index} key={index} item={item}/>
+            <Card handleClick={handleClick} id={index} key={index} item={item}/>
         ))}
     </div>
   )
