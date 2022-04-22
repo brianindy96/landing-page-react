@@ -37,3 +37,8 @@
     border-radius: 50%;
 }
 
+.cart-sum > div{
+    font-size: 1.3rem;
+    padding-top: 10px;
+}
+

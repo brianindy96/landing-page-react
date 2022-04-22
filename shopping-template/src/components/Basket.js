@@ -2,6 +2,14 @@ import React from 'react'
 import "./Basket.css"
 
 const Basket = ({ cartItems, onAdd, onRemove }) => {
+
+    const itemPrice = cartItems.reduce((a,c) => a + c.price * c.qty, 0);
+    // Tax Price is 14% of itemPrice
+    const taxPrice = itemPrice * 0.14;
+    // If itemPrice is greater than 12 bucks, free shipping; if not, 5 bucks
+    const shippingPrice = itemPrice > 12 ? 0 : 5;
+    const totalPrice = itemPrice + taxPrice + shippingPrice;
+
   return (
     <aside className="sidebar">
         <h2>Basket</h2>
@@ -24,6 +32,24 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
                 </div>
             </div>
         ))}
+        {/* If cartitem is not empty, then render the following */}
+        {cartItems.length !== 0 && (
+            <div className="cart-sum">
+                <hr></hr>
+                <div className="summary">
+                    <div>Items Price: ${itemPrice.toFixed(2)}</div>
+                </div>
+                <div className="summary">
+                    <div>Tax Price: ${taxPrice.toFixed(2)}</div>
+                </div>
+                <div className="summary">
+                    <div>Shipping Price: ${shippingPrice.toFixed(2)}</div>
+                </div>
+                <div className="summary">
+                    <div><strong>Total Price:</strong> ${totalPrice.toFixed(2)}</div>
+                </div>
+            </div>
+        )}
     </aside>
   )
 }
