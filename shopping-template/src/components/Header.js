@@ -9,8 +9,8 @@ const Header = () => {
         </div>
         <div className="links">
             <ul>
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="/">Sign In</a></li>
+                <li><a href="/">Cart</a></li>
             </ul>
         </div>
     </header>
