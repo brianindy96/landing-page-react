@@ -25,12 +25,26 @@ function App() {
       }
     };
 
+    const onRemove = (product) =>{
+      const exist = cartItems.find((item) => item.id === product.id);
+      
+      if(exist.qty === 1){
+        setCartItems(cartItems.filter((item)=> item.id !== product.id));
+    } else{
+      setCartItems(
+        cartItems.map((item)=>
+        item.id === product.id ? {...exist, qty: exist.qty-1} : item
+        )
+      );
+    }
+  };
+
   return (
     <div className="App">
       <Header />
       <div className="container">
         <Main onAdd={onAdd} products={products} />
-        <Basket onAdd={onAdd} cartItems={cartItems} />
+        <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
       </div>
     </div>
   );
