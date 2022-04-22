@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Header.css"
 
-const Header = () => {
+const Header = ({ countCartItems }) => {
   return (
     <header className="header-container">
         <div className="logo-cont">
@@ -10,7 +10,16 @@ const Header = () => {
         <div className="links">
             <ul>
                 <li><a href="/">Sign In</a></li>
-                <li><a href="/">Cart</a></li>
+                <li><a href="/">
+                Cart {' '}
+                {countCartItems? (
+                    <button className="count">
+                        {countCartItems}
+                    </button>
+                ):
+                ''
+                }
+                </a></li>
             </ul>
         </div>
     </header>

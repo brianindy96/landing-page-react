@@ -48,7 +48,10 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
                 <div className="summary">
                     <div><strong>Total Price:</strong> ${totalPrice.toFixed(2)}</div>
                 </div>
+                <button onClick={()=>alert("Implement CheckOut")} className="check-out">Implement Check out</button>
             </div>
+
+            
         )}
     </aside>
   )
