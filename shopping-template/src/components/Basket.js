@@ -14,8 +14,10 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
     <aside className="sidebar">
         <h2>Basket</h2>
         <div className="empty-cart">
+        {/* If Cart is empty, display message */}
             {cartItems.length === 0 && <div>Cart is Empty</div>}
         </div>
+        {/* Displaying Items on Basket */}
         {cartItems.map((item) =>(
             <div key={item.id} className="items">
                 <div>{item.name}</div>

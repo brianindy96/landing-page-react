@@ -2,7 +2,6 @@ import React from 'react'
 import "./Product.css" 
 
 const Product = ({ product, onAdd }) => {
-
   return (
     <div className="card">
         <div className="img-container">
